@@ -1,0 +1,255 @@
+
+Problem 1
+
+Given two integers, multiply them.
+Input:
+An integer T denoting the number of testcases. T sets of two integers A and B on separate lines.
+-101000 < A, B < 101000
+Output
+The result of A * B.
+Sample Input
+
+2
+12345612312345632453123423442122343234
+98736462562456373737387637671678628768
+-5
+4
+
+Sample Output
+
+1218962087888515002343357130588851003810953310781392320488760173108162555712
+-20
+
+
+Problem 2
+
+The Owl network at Hogwarts is being watched by the Ministry of Magic. Escaped convict Sirius Black, wants to send a message to his godson Harry, without it being interpreted by the Hogwarts High Inquisitor,the evil Dolores Umbridge. Harry and Sirius decided it would be the safest to encode their message using Muggle encoding methods. They first secretly agree on two numbers that will be used as the number of rows (R) and columns (C) in a matrix. Sirius then encodes the given string of size <= R*C into an intermediate format such that the characters of the string are arranged in a spiral pattern along the matrix as shown below. In case the length of the string is less than the size of the matrix, the matrix is padded with the highest ascii value character present in the string, to fill the matrix completely. For example, if the text to be encoded is: "alphanumerical" and R=4 and C=4, the matrix would be filled in as follows:
+
+	
+a-l-p-h
+      |
+c-a-l a
+|   | |
+i u-u n
+|     |
+r-e-m-u
+
+
+The characters in the matrix are then concatenated together in row major order and sent to Harry. Given an encoded string as well as the number of rows and columns of the encoding matrix and the size of the padding, help Harry decode it.
+Input:
+The first line of input contains a single integer N, (1 ≤ N ≤ 1000) which is the number of testcases that follow.Each testcase consists of a single line of input containing R (1<=R<=20), a space, C (1<=C<=20), a space, a string of LOWERCASE characters that represents the contents of the matrix (R * C characters) and the size of padding added. The characters are in row major order.
+Output
+For each testcase, you should generate one line of output containing the decoded string.
+Sample Input
+
+1
+alphcalaiuunremu 4 4 2
+
+Sample Output
+
+alphanumerical
+
+
+Problem 3
+
+Little Bob loves to play with strings! Alice decided to test his skills so she gave him a string S and asked him Q questions of the form: If all distinct substrings of string S were sorted lexicographically, which one will be the K-th smallest? After knowing the huge number of questions Alice will ask, Bob figured out that he can't do this alone. So he needs your help to write a program which given S will answer Alice's questions. Example: S = aaa substrings of S are "a" , "a" , "a" , "aa" , "aa" , "aaa". The sorted list of substrings will be: "a", "aa", "aaa".
+Input:
+An integer T denoting the number of testcases. For each testcase there is Alice's string S (with length no more than 100 characters). It contains only small letters of English alphabet. The second line contains a single integer Q (Q <= 500) , the number of questions Bob will be asked. In the next Q lines a single integer K is given (0 < K < 231).
+Output
+For each testcase output consists of Q lines, the i-th line contains a string which is the answer to the i-th asked question.
+Sample Input
+
+1
+aaa
+2
+2
+3
+
+Sample Output
+
+aa
+aaa
+
+
+Problem 4
+
+Harry hates potions. And Snape hates Harry. So Snape has decided to punish Harry by giving him a tedious Potions task. Harry is given two cauldrons of capacity A and B litres. His task is to fill one of the cauldrons with exactly C litres of SSP (stupid stinking potion as Harry liked to call it). But Harry is in a hurry. He wants to go and practice Quidditch. And he needs your help since he is forbidden from using magic.
+( 'One last thing, Potter. You can not use magic.' Snape had said, hardly bothering to hide the smile. Harry was incredulous. 'How long will you torment me?' 'Always.' Snape had said and made an exit from the dungeon in what seemed like a triumphant gallop. )
+Harry wants your help in finding out the minimum number of operations required to fill one of the cauldrons with exactly C litres of SSP. At the beginning both of the cauldrons are empty. The following actions are counted as 'operations':
+* Emptying a cauldron
+* Filling a cauldron with SSP
+* Pouring SSP from one cauldron to another, without spilling, until one of the cauldrons is either full or empty.
+Input:
+Three positive integers per line, A (the number of litres of SSP the first cauldron can hold), B (the number of litres of SSP the second cauldron can hold) and C (the final amount of SSP one of the cauldrons should hold). You have to scan till the end of the file. A,B,C < 40000
+Output
+For each test case, you need to output the minimum number of steps required to obtain C litres of SSP in one of the cauldrons on a separate line. Output -1 if it's not possible.
+Sample Input
+
+5 2 3
+2 3 4
+
+Sample Output
+
+2
+-1
+
+
+Problem 5
+
+Given a string, find the longest substring that is a palindrome. If there are multiple such strings print the lexicographically smallest substring.
+Input:
+One string per line. Length of the string < 1000
+Output
+The longest palindrome substring per line.
+Sample Input
+
+aabcdcbop
+bbccaa
+
+Sample Output
+
+bcdcb
+aa
+
+Hint: Think of each position in the string as the center of a potential palindrome. Expand around each letter to find the longest palindrome centered on that letter. Take care of even and odd palindromes.
+Hint: Find all substrings of all possible lengths and check if any of them is a palindrome. If it is, save it. If you have saved a palindromic substring earlier and you find a new one again, save the longer of two, or the lexicographically smaller one. If strcmp(s1,s2) returns less than 0, it means s1 will occur before s2 in a dictionary.
+Here's the pseudo-code :
+
+for all lengths in 1 to N defined as L :
+for all substrings of length L :
+if this substring is a palindrome :
+if this is the first one we have found : save it
+else if this is the longer substring than the last one : save this substring
+else : run strcmp, save the lexicographically smaller one
+print the longest palindromic substring
+						
+
+
+Problem 6
+
+Two sentences are said to rhyme, if their last two characters are the same.
+
+For example, the following two sentences rhyme:
+It's a lovely weather today Time to feed the cow some hay
+
+Your task is to find the rhyme scheme of a given stanza (A stanza is defined as a collection of lines). A rhyme scheme is usually referred to by using letters to indicate which lines rhyme; lines designated with the same letter all rhyme with each other. In other words, it is the pattern of end rhymes or lines. < a href="http://en.wikipedia.org/wiki/Rhyme_scheme">http://en.wikipedia.org/wiki/Rhyme_scheme
+Input:
+An integer T denoting the number of stanzas to follow. Each stanza ends with a #. The stanza itself will only contain the letters [a-z] and spaces. The last two letters of each line will only be letters [a-z].
+Output
+Rhyme scheme for each stanza on a separate line. The rhyme scheme will contain as many letters as there are lines in the stanza. So, for example, if the stanze contains 12 lines, the rhyme scheme will contain 12 letters. You'll denote the rhyme scheme using the letters [A-Z].
+Sample Input
+
+4
+boat heat mat
+soap globe
+band robe
+murder probe
+mad cat#
+sunday
+monday
+tuesday#
+weather
+laptop
+books
+summer vacations#
+all
+daughter
+small
+manner#
+
+Sample Output
+
+ABBBA
+AAA
+ABCD
+ABAB
+
+Hint: Think about using a 26*26 2D character array where each row and each column would represent a letter from a-z. 
+
+
+Problem 7
+
+You are given two strings A and B, B being the smaller one. Your task is to output a string in whichall occurrences of B are removed from A. If there are overlapping occurrences of B in A, remove all of them.
+Input:
+The first line of input contains the number of test cases. The test cases follow on subsequent lines - first the string A, then the string B.
+Output
+You have to output the result string on a new line for every test case.
+Sample Input
+
+2
+abbababcba abab
+aababbaababbac aababba
+
+Sample Output
+
+abbcba
+c
+
+
+Problem 8
+
+You are given two Strings S and P. S consists of alphabets and the '?' character only, while P is any string of alphabets. The length of P is always less than S. You are required to replace '?' with some alphabet so that resulting string has maximum number of substrings that are equal to P. If there are rendundant '?' left fill them up with the character '*'. Note:The question has to be solved using minimium number of characters.
+Input:
+The first line of input contains a single integer N, (1 ≤ N ≤ 1000) which is the number of testcases that follow. Each testcase consists of a single line of input containing strings S and P. The string length of S is <=10000 and P is <=1000.
+Output
+For each testcase, you should generate one line of output containing the new string S.
+Sample Input
+
+2
+GUMMUG????UGGLE?????? MUGGLE
+GUM?MUG????UGGLE?????? MUGGLE
+
+Sample Output
+
+GUMMUGGLEMUGGLEMUGGLE
+GUM*MUGGLEMUGGLEMUGGLE
+
+Hint: Move character by character and treat each as the possible beginning of the string to be replaced with. 
+
+
+
+Problem 9
+
+Neville Longbottom is in a fix again. His potions homework, which he spent the entire day completing, has been altered by a bad version of the "Rotating spell". The Rotating spell basically rotates a string circularly. For example if S="POTIONS" is the string then
+SPOTION
+NSPOTIO
+are some of its rotated versions.Given 2 strings, help Neville identify whether the second is a rotatedversion of the first string.
+Input:
+The first line of input contains a single integer N, (1 ≤ N ≤ 1000) which is the number of testcases that follow. Each testcase consists of a single line of input containing 2 strings.
+Output
+For each testcase, you should generate one line of output containing either YES or NO.
+Sample Input
+
+2
+POTIONS SPOTION
+DAILYPROPHET DAILYTPROPHE
+
+Sample Output
+
+YES
+NO
+
+
+Problem 10
+
+Given two 32 bit unsigned numbers, reverse their bit sequence (i.e., the lestmost bit becomes the righmost bit and so on) and print their sum.
+Input:
+Two unsigned 32 bit numbers per line.
+Output
+The sum of their reversed bit sequences.
+Sample Input
+
+2 3
+
+Sample Output
+
+4294967296
+
+Explanation
+
+2 is 00......10 , its reversed sequence is 01..........00
+3 is 00......11 , its reversed sequence is 11..........00
+
+
+
+

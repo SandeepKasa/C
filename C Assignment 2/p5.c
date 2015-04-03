@@ -1,0 +1,61 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	long long int n,x,i,r,k,sum,rem,a,b,s,t,y,z;
+	while(	scanf("%lld",&n)!= EOF	)
+        {
+          double o;
+          x=n;
+          i=0;
+          while(x>0)
+        {
+          x=x/10;
+	  i++;
+        }
+          y=n;
+          k=0;
+          if(y!=0)
+          {
+          while(n>0)
+        {     
+            r=n%10;
+            k=(k*10)+r;
+            n=n/10;
+         }
+          if(y==k)
+        {
+          printf("YES\n");
+          if((i%2)!=0)
+        {
+             sum=0;
+             z=y;
+             while(z!=0)
+         {
+           rem=z%10;
+           sum=sum+rem;
+           z=z/10;
+         }
+          printf("%lld\n",sum);
+        }
+          else
+         {
+          a=i/2;
+          b=pow(10,a);
+          s=y/b;
+          t=y%b;
+          o=(double)s/t;
+          printf("%0.2lf\n",o);
+         }
+      }
+      else
+      printf("NO\n");
+}
+         else
+{
+         printf("YES\n");
+         printf("0\n");
+}
+}
+return 0; 
+}
